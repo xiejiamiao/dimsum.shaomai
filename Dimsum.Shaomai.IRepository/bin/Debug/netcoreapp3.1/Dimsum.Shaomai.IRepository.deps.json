@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Dimsum.Shaomai.IRepository/1.0.0": {
+        "dependencies": {
+          "Dimsum.Shaomai.DomainEntity": "1.0.0"
+        },
+        "runtime": {
+          "Dimsum.Shaomai.IRepository.dll": {}
+        }
+      },
+      "Dimsum.Shaomai.DomainEntity/1.0.0": {
+        "runtime": {
+          "Dimsum.Shaomai.DomainEntity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Dimsum.Shaomai.IRepository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dimsum.Shaomai.DomainEntity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

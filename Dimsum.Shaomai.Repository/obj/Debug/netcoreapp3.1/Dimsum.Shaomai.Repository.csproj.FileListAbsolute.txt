@@ -1,0 +1,15 @@
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.deps.json
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.csprojAssemblyReference.cache
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.AssemblyInfoInputs.cache
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.AssemblyInfo.cs
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.csproj.CopyComplete
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Repository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Repository.pdb

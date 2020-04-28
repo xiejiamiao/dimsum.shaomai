@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dimsum.Shaomai.Infrastructure\Dimsum.Shaomai.Infrastructure.csproj" />
+    <ProjectReference Include="..\Dimsum.Shaomai.IRepository\Dimsum.Shaomai.IRepository.csproj" />
+  </ItemGroup>
+
+</Project>

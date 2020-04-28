@@ -1,0 +1,11 @@
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.deps.json
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.csprojAssemblyReference.cache
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.AssemblyInfoInputs.cache
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.AssemblyInfo.cs
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.csproj.CopyComplete
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.pdb

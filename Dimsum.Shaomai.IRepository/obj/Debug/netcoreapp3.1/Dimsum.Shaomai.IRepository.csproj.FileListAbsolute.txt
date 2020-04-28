@@ -1,0 +1,11 @@
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.deps.json
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.csprojAssemblyReference.cache
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.AssemblyInfoInputs.cache
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.AssemblyInfo.cs
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.csproj.CopyComplete
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.IRepository\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.IRepository.pdb
