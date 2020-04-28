@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Dimsum.Shaomai.Infrastructure;
 using Dimsum.Shaomai.IRepository;
 using Dimsum.Shaomai.Repository;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,9 +24,14 @@ namespace Dimsum.Shaomai.Manager.Extensions
         public static IServiceCollection AddRepository(this IServiceCollection services)
         {
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IManagerUserRepository, ManagerUserRepository>();
-
             return services;
+        }
+
+        public static IServiceCollection AddShaomaiMediator(this IServiceCollection services)
+        {
+            return services.AddMediatR(typeof(Program).Assembly);
         }
     }
 }

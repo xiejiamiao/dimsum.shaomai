@@ -21,5 +21,6 @@ namespace Dimsum.Shaomai.Infrastructure
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }

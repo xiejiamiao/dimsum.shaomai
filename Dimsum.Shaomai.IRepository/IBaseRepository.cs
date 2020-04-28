@@ -65,5 +65,7 @@ namespace Dimsum.Shaomai.IRepository
         /// <param name="entity"></param>
         /// <returns></returns>
         Task<TEntity> UpdateAsync(TEntity entity);
+
+        
     }
 }

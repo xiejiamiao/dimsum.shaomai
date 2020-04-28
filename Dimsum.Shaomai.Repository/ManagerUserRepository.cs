@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Dimsum.Shaomai.DomainEntity;
 using Dimsum.Shaomai.Infrastructure;
@@ -19,10 +20,10 @@ namespace Dimsum.Shaomai.Repository
             _domainContext = domainContext;
         }
 
-        public async Task<bool> ExistUserName(string username)
+        public async Task<bool> ExistUserName(string username,CancellationToken cancellationToken=default)
         {
             return await _domainContext.ManagerUsers.AnyAsync(x =>
-                x.UserName.Equals(username, StringComparison.OrdinalIgnoreCase));
+                x.UserName.Equals(username, StringComparison.OrdinalIgnoreCase), cancellationToken);
         }
     }
 }

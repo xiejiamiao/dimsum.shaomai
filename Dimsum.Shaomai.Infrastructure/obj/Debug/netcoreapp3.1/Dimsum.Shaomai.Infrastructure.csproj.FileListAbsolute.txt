@@ -9,3 +9,14 @@ F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastruc
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.csproj.CopyComplete
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.dll
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.pdb
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.deps.json
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.dll
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.pdb
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.csprojAssemblyReference.cache
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.AssemblyInfoInputs.cache
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.AssemblyInfo.cs
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.csproj.CopyComplete
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.dll
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Infrastructure\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Infrastructure.pdb

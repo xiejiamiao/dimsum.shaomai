@@ -13,7 +13,8 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
         {
             builder.HasKey(x => x.Id);
             builder.ToTable("manager_user");
-            builder.HasIndex(x => x.UserName).IsUnique();
+            builder.HasIndex(x => new {x.UserName, x.IsDeleted}).IsUnique();
+            builder.HasQueryFilter(x => !x.IsDeleted);
         }
     }
 }

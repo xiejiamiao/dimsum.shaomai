@@ -6,3 +6,10 @@ F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.DomainEnti
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.csprojAssemblyReference.cache
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.deps.json
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.AssemblyInfoInputs.cache
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.AssemblyInfo.cs
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.dll
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.DomainEntity\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.DomainEntity.pdb
