@@ -12,6 +12,7 @@
     <link href="/dist/loading/css/animate.css" rel="stylesheet" />
     <link href="/dist/loading/css/global.css" rel="stylesheet" />
     <link href="/dist/loading/css/loading.css" rel="stylesheet" />
+    @await RenderSectionAsync("style", false)
 </head>
 
 <body>
@@ -274,12 +275,12 @@
     <script src="/dist/purple/vendors/js/vendor.bundle.addons.js"></script>
     <script src="/dist/purple/js/off-canvas.js"></script>
     <script src="/dist/purple/js/misc.js"></script>
-<script src="/dist/loading/js/loading.js"></script>
-<script src="/dist/node_modules/axios/dist/axios.min.js"></script>
-<script src="/javascript/axiosLoading.js"></script>
+    <script src="/dist/loading/js/loading.js"></script>
+    <script src="/dist/node_modules/axios/dist/axios.min.js"></script>
+    <script src="/javascript/axiosLoading.js"></script>
     <script>
         $(function () {
-            axios.get('/user/info').then(function(response) {
+            axios.get('/user/info').then(function (response) {
                 var data = response.data;
                 console.log(data);
                 $('#nav_avatar').attr('src', data.avatar);
@@ -288,12 +289,13 @@
 
             $('#btnLogout').on('click',
                 function () {
-                    axios.post('/user/logout', {}).then(function() {
+                    axios.post('/user/logout', {}).then(function () {
                         location.reload();
                     });
                 });
         })
     </script>
+    @await RenderSectionAsync("scripts", false)
 </body>
 
 </html>
