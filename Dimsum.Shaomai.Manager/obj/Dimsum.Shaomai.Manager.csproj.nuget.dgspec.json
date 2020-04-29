@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj": {}
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj": {}
   },
   "projects": {
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj": {
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj",
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj",
         "projectName": "Dimsum.Shaomai.DomainEntity",
-        "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj",
-        "packagesPath": "C:\\Users\\xieji\\.nuget\\packages\\",
-        "outputPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\obj\\",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xieji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,24 +55,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj": {
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj",
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj",
         "projectName": "Dimsum.Shaomai.Infrastructure",
-        "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\xieji\\.nuget\\packages\\",
-        "outputPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\obj\\",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xieji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj"
               }
             }
           }
@@ -124,24 +124,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj": {
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj",
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj",
         "projectName": "Dimsum.Shaomai.IRepository",
-        "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj",
-        "packagesPath": "C:\\Users\\xieji\\.nuget\\packages\\",
-        "outputPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\obj\\",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xieji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,8 +154,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.DomainEntity\\Dimsum.Shaomai.DomainEntity.csproj"
               }
             }
           }
@@ -183,24 +183,79 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj": {
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.ManagerDto\\Dimsum.Shaomai.ManagerDto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj",
-        "projectName": "Dimsum.Shaomai.Manager",
-        "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj",
-        "packagesPath": "C:\\Users\\xieji\\.nuget\\packages\\",
-        "outputPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Manager\\obj\\",
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.ManagerDto\\Dimsum.Shaomai.ManagerDto.csproj",
+        "projectName": "Dimsum.Shaomai.ManagerDto",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.ManagerDto\\Dimsum.Shaomai.ManagerDto.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.ManagerDto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xieji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj",
+        "projectName": "Dimsum.Shaomai.Manager",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Manager\\Dimsum.Shaomai.Manager.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Manager\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -213,17 +268,20 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj"
               },
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj"
               },
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.ManagerDto\\Dimsum.Shaomai.ManagerDto.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.ManagerDto\\Dimsum.Shaomai.ManagerDto.csproj"
               },
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj"
+              },
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj"
               }
             }
           }
@@ -284,24 +342,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj": {
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj",
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj",
         "projectName": "Dimsum.Shaomai.Repository",
-        "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj",
-        "packagesPath": "C:\\Users\\xieji\\.nuget\\packages\\",
-        "outputPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Repository\\obj\\",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Repository\\Dimsum.Shaomai.Repository.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xieji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -314,11 +372,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Infrastructure\\Dimsum.Shaomai.Infrastructure.csproj"
               },
-              "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj": {
-                "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj"
+              "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj": {
+                "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.IRepository\\Dimsum.Shaomai.IRepository.csproj"
               }
             }
           }
@@ -346,24 +404,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj": {
+    "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj",
+        "projectUniqueName": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj",
         "projectName": "Dimsum.Shaomai.Util",
-        "projectPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj",
-        "packagesPath": "C:\\Users\\xieji\\.nuget\\packages\\",
-        "outputPath": "G:\\repo\\Jiamiao.x.Project\\dimsum.shaomai\\Dimsum.Shaomai.Util\\obj\\",
+        "projectPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Util\\Dimsum.Shaomai.Util.csproj",
+        "packagesPath": "C:\\Users\\Jiamiao.x\\.nuget\\packages\\",
+        "outputPath": "F:\\Jiamiao.x\\personal.project\\Jiamiao_x.Dimsum.Shaomai\\Dimsum.Shaomai.Util\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xieji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jiamiao.x\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -407,7 +465,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

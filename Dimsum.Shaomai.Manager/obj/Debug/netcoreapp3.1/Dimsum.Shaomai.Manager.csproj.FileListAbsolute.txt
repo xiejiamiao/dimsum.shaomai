@@ -270,3 +270,11 @@ G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcor
 G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Util.dll
 G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Util.pdb
 G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\User\Register.cshtml.g.cs
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\MediatR.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\NETCore.Encrypt.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Util.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.Util.pdb
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\User\Register.cshtml.g.cs
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.ManagerDto.dll
+F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\bin\Debug\netcoreapp3.1\Dimsum.Shaomai.ManagerDto.pdb

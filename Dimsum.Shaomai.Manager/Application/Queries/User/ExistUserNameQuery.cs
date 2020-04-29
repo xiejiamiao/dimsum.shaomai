@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dimsum.Shaomai.ManagerDto;
+using Dimsum.Shaomai.ManagerDto.User;
 using MediatR;
 
 namespace Dimsum.Shaomai.Manager.Application.Queries.User
 {
-    public class ExistUserNameQuery:IRequest<bool>
+    public class ExistUserNameQuery:IRequest<BaseDto>
     {
         public string Username { get; }
 

@@ -18,9 +18,11 @@ namespace Dimsum.Shaomai.Manager
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddMySqlDbContext(configuration: Configuration);
             services.AddRepository();
             services.AddShaomaiMediator();
+            services.AddShaomaiAuthentication(configuration: Configuration);
             services.AddControllersWithViews();
         }
 
@@ -32,6 +34,7 @@ namespace Dimsum.Shaomai.Manager
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();

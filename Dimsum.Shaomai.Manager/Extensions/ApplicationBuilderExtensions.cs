@@ -7,5 +7,6 @@ namespace Dimsum.Shaomai.Manager.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
+
     }
 }

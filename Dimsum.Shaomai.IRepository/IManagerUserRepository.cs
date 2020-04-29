@@ -16,5 +16,13 @@ namespace Dimsum.Shaomai.IRepository
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task<bool> ExistUserName(string username, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 根据用户名查询用户信息
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<ManagerUser> GetManagerUserByUserNameAsync(string username, CancellationToken cancellationToken = default);
     }
 }

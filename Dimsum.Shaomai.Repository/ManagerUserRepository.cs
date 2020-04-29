@@ -25,5 +25,10 @@ namespace Dimsum.Shaomai.Repository
             return await _domainContext.ManagerUsers.AnyAsync(x =>
                 x.UserName.Equals(username, StringComparison.OrdinalIgnoreCase), cancellationToken);
         }
+
+        public async Task<ManagerUser> GetManagerUserByUserNameAsync(string username, CancellationToken cancellationToken = default)
+        {
+            return await _domainContext.ManagerUsers.Where(x => x.UserName == username).FirstOrDefaultAsync(cancellationToken);
+        }
     }
 }

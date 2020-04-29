@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dimsum.Shaomai.Infrastructure;
 using Dimsum.Shaomai.IRepository;
+using Dimsum.Shaomai.Manager.Infrastructure.Authorize;
 using Dimsum.Shaomai.Repository;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +34,19 @@ namespace Dimsum.Shaomai.Manager.Extensions
         public static IServiceCollection AddShaomaiMediator(this IServiceCollection services)
         {
             return services.AddMediatR(typeof(Program).Assembly);
+        }
+
+        public static IServiceCollection AddShaomaiAuthentication(this IServiceCollection services,IConfiguration configuration)
+        {
+            var loginPath = configuration["LoginPath"];
+            services.AddScoped<HttpAuthorizeHandler>();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                options =>
+                {
+                    options.LoginPath = "/user/login";
+                });
+            return services;
         }
     }
 }

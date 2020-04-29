@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/dist/purple/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="/dist/purple/css/style.css">
     <link rel="shortcut icon" href="/dist/purple/images/favicon.png" />
+    <link href="/dist/loading/css/animate.css" rel="stylesheet" />
+    <link href="/dist/loading/css/global.css" rel="stylesheet" />
+    <link href="/dist/loading/css/loading.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,8 +29,6 @@
                             <div class="brand-logo">
                                 <img src="/dist/purple/images/logo.svg">
                             </div>
-                            <!--<h4>Hello! let's get started</h4>-->
-                            <!--<h6 class="font-weight-light">Sign in to continue.</h6>-->
                             <form class="pt-3">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="txtUsername" placeholder="请输入用户名">
@@ -36,7 +37,7 @@
                                     <input type="password" class="form-control form-control-lg" id="txtPassword" placeholder="请输入密码">
                                 </div>
                                 <div class="mt-3">
-                                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="/dist/purple/index.html">登录</a>
+                                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" id="btnLogin" href="javascript:void(0);">登录</a>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">
@@ -49,23 +50,44 @@
                                 </div>
 
                                 <div class="text-center mt-4 font-weight-light">
-                                    还没账号? <a href="/user/register" class="text-primary">注册一个</a>
+                                    还没账号? <a href="/user/register?returnUrl=@ViewBag.ReturnUrl" class="text-primary">注册一个</a>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
         </div>
-        <!-- page-body-wrapper ends -->
     </div>
 
     <script src="/dist/purple/vendors/js/vendor.bundle.base.js"></script>
     <script src="/dist/purple/vendors/js/vendor.bundle.addons.js"></script>
-<script src="/dist/purple/js/off-canvas.js"></script>
+    <script src="/dist/purple/js/off-canvas.js"></script>
     <script src="/dist/purple/js/misc.js"></script>
+    <script src="/dist/loading/js/loading.js"></script>
+    <script src="/dist/node_modules/axios/dist/axios.min.js"></script>
+    <script src="/javascript/axiosLoading.js"></script>
+    <script>
+        $(function () {
+            $('#btnLogin').click(function () {
+                var username = $('#txtUsername').val();
+                var password = $('#txtPassword').val();
+                var obj = {
+                    username: username,
+                    password: password
+                };
 
+                axios.post('/user/LoginHandler', obj).then(function(response) {
+                    var data = response.data;
+                    if (data.isSuccess) {
+                        location.href = "@ViewBag.ReturnUrl";
+                    } else {
+                        alert(data.msg);
+                    }
+                });
+            });
+        })
+    </script>
 </body>
 
 </html>
