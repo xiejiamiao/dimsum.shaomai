@@ -40,5 +40,18 @@ namespace Dimsum.Shaomai.Manager.Infrastructure.Authorize
         {
             await _httpContextAccessor.HttpContext.SignOutAsync();
         }
+
+        public Guid GetUseIdFromCookie()
+        {
+            var cookieItem = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "ManagerUserId");
+            if (cookieItem != null)
+            {
+                return Guid.Parse(cookieItem.Value);
+            }
+            else
+            {
+                throw new ArgumentNullException(nameof(cookieItem));
+            }
+        }
     }
 }

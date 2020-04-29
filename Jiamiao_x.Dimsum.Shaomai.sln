@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dimsum.Shaomai.Util", "Dims
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dimsum.Shaomai.ManagerDto", "Dimsum.Shaomai.ManagerDto\Dimsum.Shaomai.ManagerDto.csproj", "{6B4EBD1E-3B6F-4991-A8FF-91919954EE62}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{183A931E-8DEC-41BA-851F-9C682C7629B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{E7D92CC9-EFC3-407D-8E09-84DD970FBE74} = {183A931E-8DEC-41BA-851F-9C682C7629B6}
 		{4CDBED1E-832D-4733-9317-9C13A4F06AEF} = {1F5B8857-62C0-4877-8CE5-34FF5D2EEE63}
 		{7EB73D15-4190-42D7-B7BC-2F33A31D5CA3} = {7E0E606A-3554-42D0-BCB8-B60690DDF05D}
 		{0B087F3F-1C6C-4611-A270-A91C94399581} = {7E0E606A-3554-42D0-BCB8-B60690DDF05D}

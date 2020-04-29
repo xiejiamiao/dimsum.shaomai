@@ -16,18 +16,17 @@ using Microsoft.Extensions.Logging;
 
 namespace Dimsum.Shaomai.Manager.Controllers
 {
+    [Authorize]
     [Route("[controller]/[action]")]
     public class UserController : Controller
     {
         private readonly IMediator _mediator;
         private readonly ILogger<UserController> _logger;
-        private readonly HttpAuthorizeHandler _httpAuthorizeHandler;
 
-        public UserController(IMediator mediator,ILogger<UserController> logger,HttpAuthorizeHandler httpAuthorizeHandler)
+        public UserController(IMediator mediator,ILogger<UserController> logger)
         {
             _mediator = mediator;
             _logger = logger;
-            _httpAuthorizeHandler = httpAuthorizeHandler;
         }
 
         [HttpGet]
@@ -75,6 +74,20 @@ namespace Dimsum.Shaomai.Manager.Controllers
         {
             var checkResult = await _mediator.Send(new ExistUserNameQuery(username));
             return checkResult;
+        }
+
+        [HttpPost]
+        public async Task<BaseDto> Logout([FromServices]HttpAuthorizeHandler httpAuthorizeHandler)
+        {
+            await httpAuthorizeHandler.SignOutAsync();
+            return new BaseDto() {IsSuccess = true, Msg = "操作成功"};
+        }
+
+        [HttpGet]
+        public async Task<UserInfo> Info()
+        {
+            var userInfoResponse =await _mediator.Send(new UserInfoQuery());
+            return userInfoResponse;
         }
 
     }
