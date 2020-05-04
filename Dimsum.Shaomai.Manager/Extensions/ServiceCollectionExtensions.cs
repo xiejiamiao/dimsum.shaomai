@@ -28,6 +28,7 @@ namespace Dimsum.Shaomai.Manager.Extensions
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IManagerUserRepository, ManagerUserRepository>();
+            services.AddScoped<ISolutionRepository, SolutionRepository>();
             return services;
         }
 

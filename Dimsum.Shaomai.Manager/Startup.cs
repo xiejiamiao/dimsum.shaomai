@@ -41,7 +41,8 @@ namespace Dimsum.Shaomai.Manager
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute("default", "{controller}/{action}/{id?}",
+                    defaults: new {controller = "Home", action = "Index"});
             });
         }
     }

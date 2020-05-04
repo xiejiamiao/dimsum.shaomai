@@ -17,7 +17,6 @@ using Microsoft.Extensions.Logging;
 namespace Dimsum.Shaomai.Manager.Controllers
 {
     [Authorize]
-    [Route("[controller]/[action]")]
     public class UserController : Controller
     {
         private readonly IMediator _mediator;

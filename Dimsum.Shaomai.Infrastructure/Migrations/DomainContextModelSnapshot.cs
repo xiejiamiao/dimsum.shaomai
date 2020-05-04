@@ -57,6 +57,52 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
 
                     b.ToTable("manager_user");
                 });
+
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.Solution", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("ContactEmail")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<Guid>("ManagerUserId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ManagerUserId");
+
+                    b.HasIndex("Name", "IsDeleted")
+                        .IsUnique();
+
+                    b.ToTable("solution");
+                });
+
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.Solution", b =>
+                {
+                    b.HasOne("Dimsum.Shaomai.DomainEntity.ManagerUser", "ManagerUser")
+                        .WithMany("Solutions")
+                        .HasForeignKey("ManagerUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
 #pragma warning restore 612, 618
         }
     }

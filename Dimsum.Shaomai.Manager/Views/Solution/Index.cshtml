@@ -1,8 +1,51 @@
-﻿
+﻿@model List<Dimsum.Shaomai.ManagerDto.Solution.SolutionListItem>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>SolutionIndex</h1>
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <i class="mdi mdi-database-plus"></i>
+        </span>
+        解决方案列表
+    </h3>
+</div>
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">我的解决方案</h4>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3 stretch-card grid-margin">
+                            <button class="btn btn-outline-dark btn-icon-text btn-block btn-solution" data-solution="@item.Id">
+                                <i class="mdi mdi-application btn-icon-prepend mdi-36px"></i>
+                                <span class="d-inline-block text-left">
+                                    <small class="font-weight-light d-block">@item.Name</small>
+                                    @item.CName
+                                </span>
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+@section scripts
+{
+    <script>
+        $(function() {
+            $('.btn-solution').on('click',
+                function() {
+                    var that = $(this);
+                    var solutionId = that.data('solution');
+                    location.href = "/solution/detail/" + solutionId;
+                });
+        })
+    </script>
+}

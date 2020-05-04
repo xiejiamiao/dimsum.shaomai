@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "AddSolution";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section style
+{
+    
+}
+
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <i class="mdi mdi-application"></i>
+        </span>
+        添加解决方案
+    </h3>
+</div>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">解决方案信息</h4>
+            <p class="card-description">
+                请输入解决方案信息
+            </p>
+            <form>
+                <div class="form-group">
+                    <label for="txtSolutionName">英文名称</label>
+                    <input type="text" class="form-control" id="txtSolutionName" placeholder="请输入解决方案名称">
+                </div>
+                <div class="form-group">
+                    <label for="txtSolutionName">中文名称</label>
+                    <input type="text" class="form-control" id="txtSolutionCnName" placeholder="请输入解决方案中文名称">
+                </div>
+                <div class="form-group">
+                    <label for="txtContactsEmail">联系人邮箱</label>
+                    <input type="email" class="form-control" id="txtContactsEmail" placeholder="请输入解决方案联系人邮箱">
+                </div>
+                <button type="button" class="btn btn-gradient-primary mr-2" id="btnSummit">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+{
+
+    <script>
+        $(function() {
+            var lastCheckName = '';
+            var checkNameIsPass = false;
+            $('#txtSolutionName').on('blur',
+                function() {
+                    var that = $(this);
+                    if (that.val() !== '' && that.val() !== lastCheckName) {
+                        lastCheckName = that.val();
+                        axios.get('/solution/checkName?name=' + lastCheckName).then(function(response) {
+                            var data = response.data;
+                            if (data.isSuccess) {
+                                checkNameIsPass = true;
+                            } else {
+                                checkNameIsPass = false;
+                                toastr.error(data.msg);
+                            }
+                        });
+                    }
+                });
+
+            $('#btnSummit').on('click',
+                function() {
+                    var solutionName = $('#txtSolutionName').val();
+                    var solutionCnName = $('#txtSolutionCnName').val();
+                    var contactEmail = $('#txtContactsEmail').val();
+                    var obj = {
+                        name: solutionName,
+                        cname: solutionCnName,
+                        contactEmail: contactEmail
+                    }
+                    axios.post('/solution/addSolutionHandler', obj).then(function (response) {
+                        var data = response.data;
+                        if (data.isSuccess) {
+                            toastr.success(data.msg);
+                            location.href = "/solution/index";
+                        } else {
+                            toastr.error(data.msg);
+                        }
+                    });
+                });
+    })
+    </script>
+}
+
+
+

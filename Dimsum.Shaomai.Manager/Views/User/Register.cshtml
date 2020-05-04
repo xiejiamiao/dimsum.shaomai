@@ -82,7 +82,7 @@
                             isCheckedUsername = true;
                         } else {
                             isCheckedUsername = false;
-                            alert(data.msg);
+                            toastr.error(data.msg);
                         }
                     });
                 }
@@ -90,7 +90,7 @@
         $('#btnRegister').on('click',
             function() {
                 if (!isCheckedUsername) {
-                    alert("请输入正确的用户名");
+                    toastr.error('请输入正确的用户名');
                     return;
                 }
                 var username = $('#txtUsername').val();

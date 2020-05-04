@@ -15,9 +15,12 @@ namespace Dimsum.Shaomai.Infrastructure
 
         public DbSet<ManagerUser> ManagerUsers { get; set; }
 
+        public DbSet<Solution> Solutions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ManagerUserTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new SolutionTypeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

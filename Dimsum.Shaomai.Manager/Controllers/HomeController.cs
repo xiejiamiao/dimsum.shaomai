@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Dimsum.Shaomai.Manager.Controllers
 {
     [Authorize]
-    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         [HttpGet]

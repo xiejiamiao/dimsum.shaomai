@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="/dist/purple/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/dist/purple/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="/dist/purple/css/style.css">
-    <link rel="shortcut icon" href="/dist/purple/images/favicon.png" />
-    <link href="/dist/loading/css/animate.css" rel="stylesheet" />
-    <link href="/dist/loading/css/global.css" rel="stylesheet" />
-    <link href="/dist/loading/css/loading.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/dist/purple/vendors/iconfonts/mdi/css/materialdesignicons.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="/dist/purple/vendors/css/vendor.bundle.base.css" asp-append-version="true">
+    <link rel="stylesheet" href="/dist/purple/css/style.css" asp-append-version="true">
+    <link rel="shortcut icon" href="/dist/purple/images/favicon.png" asp-append-version="true" />
+    <link href="/dist/loading/css/animate.css" rel="stylesheet" asp-append-version="true" />
+    <link href="/dist/loading/css/global.css" rel="stylesheet" asp-append-version="true" />
+    <link href="/dist/loading/css/loading.css" rel="stylesheet" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
     @await RenderSectionAsync("style", false)
 </head>
 
@@ -174,21 +175,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">
+                        <a class="nav-link" href="/">
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <span class="menu-title">UI Elements</span>
+                            <span class="menu-title">解决方案</span>
                             <i class="menu-arrow"></i>
-                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                            <i class="mdi mdi-application menu-icon"></i>
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/solution/add">添加解决方案</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/solution/index">解决方案列表</a></li>
                             </ul>
                         </div>
                     </li>
@@ -254,6 +255,8 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
+                    
+
                     @RenderBody()
 
                 </div>
@@ -271,13 +274,15 @@
         <!-- page-body-wrapper ends -->
     </div>
 
-    <script src="/dist/purple/vendors/js/vendor.bundle.base.js"></script>
-    <script src="/dist/purple/vendors/js/vendor.bundle.addons.js"></script>
-    <script src="/dist/purple/js/off-canvas.js"></script>
-    <script src="/dist/purple/js/misc.js"></script>
-    <script src="/dist/loading/js/loading.js"></script>
-    <script src="/dist/node_modules/axios/dist/axios.min.js"></script>
-    <script src="/javascript/axiosLoading.js"></script>
+    <script asp-append-version="true" src="/dist/purple/vendors/js/vendor.bundle.base.js"></script>
+    <script asp-append-version="true" src="/dist/purple/vendors/js/vendor.bundle.addons.js"></script>
+    <script asp-append-version="true" src="/dist/purple/js/off-canvas.js"></script>
+    <script asp-append-version="true" src="/dist/purple/js/misc.js"></script>
+    <script asp-append-version="true" src="/dist/purple/js/file-upload.js"></script>
+    <script asp-append-version="true" src="/dist/loading/js/loading.js"></script>
+    <script asp-append-version="true" src="/dist/node_modules/axios/dist/axios.min.js"></script>
+<script asp-append-version="true" src="/javascript/axiosLoading.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
         $(function () {
             axios.get('/user/info').then(function (response) {

@@ -44,5 +44,10 @@ namespace Dimsum.Shaomai.DomainEntity
         /// 头像地址
         /// </summary>
         public string AvatarUrl { get; set; }
+
+        /// <summary>
+        /// 解决方案集合
+        /// </summary>
+        public List<Solution> Solutions { get; set; }
     }
 }
