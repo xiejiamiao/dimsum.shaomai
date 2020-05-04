@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Dimsum.Shaomai.DomainEntity;
 using Dimsum.Shaomai.IRepository;
 using Dimsum.Shaomai.Manager.Application.Commands.Solution;
+using Dimsum.Shaomai.Manager.Application.Events;
 using Dimsum.Shaomai.Manager.Infrastructure.Authorize;
 using Dimsum.Shaomai.ManagerDto.Solution;
 using MediatR;
@@ -33,13 +35,21 @@ namespace Dimsum.Shaomai.Manager.Application.CommandHandlers.Solution
                 Name = request.Name,
                 CName = request.CName,
                 ContactEmail = request.ContactEmail,
-                ManagerUserId = _httpAuthorizeHandler.GetUseIdFromCookie()
+                ManagerUserId = _httpAuthorizeHandler.GetUseIdFromCookie(),
+                SolutionProcesses = new List<SolutionProcess>()
+                {
+                    new SolutionProcess()
+                    {
+                        Level = SolutionProcessLevel.Solution,
+                        Content = $"创建解决方案【{request.Name}】"
+                    }
+                }
             };
             await _solutionRepository.AddAsync(dbEntity, cancellationToken);
             var changedRow = await _unitOfWork.SaveChangesAsync(cancellationToken);
             if (changedRow > 0)
             {
-                
+                await _mediator.Publish(new SolutionCreatedEvent() {SolutionId = dbEntity.Id}, cancellationToken);
                 return new AddSolution()
                 {
                     IsSuccess = true,

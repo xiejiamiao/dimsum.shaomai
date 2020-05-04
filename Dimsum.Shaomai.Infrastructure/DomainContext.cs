@@ -17,11 +17,15 @@ namespace Dimsum.Shaomai.Infrastructure
 
         public DbSet<Solution> Solutions { get; set; }
 
+        public DbSet<SolutionProject> SolutionProjects { get; set; }
+
+        public DbSet<SolutionEnv> SolutionEnvs { get; set; }
+
+        public DbSet<SolutionProcess> SolutionProcesses { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ManagerUserTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new SolutionTypeConfiguration());
-
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DomainContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
 

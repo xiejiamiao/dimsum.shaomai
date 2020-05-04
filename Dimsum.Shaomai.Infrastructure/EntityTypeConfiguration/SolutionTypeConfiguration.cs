@@ -15,7 +15,6 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.ToTable("solution");
             builder.HasIndex(x => new {x.Name, x.IsDeleted}).IsUnique();
             builder.HasQueryFilter(x => !x.IsDeleted);
-
             builder.HasOne(x => x.ManagerUser).WithMany(x => x.Solutions).HasForeignKey(x => x.ManagerUserId)
                 .OnDelete(DeleteBehavior.Restrict);
         }

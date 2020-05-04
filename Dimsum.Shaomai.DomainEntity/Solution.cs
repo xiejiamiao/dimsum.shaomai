@@ -36,5 +36,20 @@ namespace Dimsum.Shaomai.DomainEntity
         /// </summary>
         public ManagerUser ManagerUser { get; set; }
 
+        /// <summary>
+        /// 【导航属性】项目集合
+        /// </summary>
+        public List<SolutionProject> SolutionProjects { get; set; } = new List<SolutionProject>();
+
+        /// <summary>
+        /// 【导航属性】环境变量集合
+        /// </summary>
+        public List<SolutionEnv> SolutionEnvs { get; set; } = new List<SolutionEnv>();
+
+        /// <summary>
+        /// 【导航属性】操作日志
+        /// </summary>
+        public List<SolutionProcess> SolutionProcesses { get; set; } = new List<SolutionProcess>();
+
     }
 }

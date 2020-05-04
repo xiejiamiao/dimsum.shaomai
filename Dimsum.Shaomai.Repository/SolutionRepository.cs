@@ -30,5 +30,11 @@ namespace Dimsum.Shaomai.Repository
             return await _domainContext.Solutions.Where(x => x.ManagerUserId == managerUserId)
                 .OrderByDescending(x => x.CreatedOn).ToListAsync();
         }
+
+        public override async Task<Solution> GetAsync(Guid id)
+        {
+            return await _domainContext.Solutions.Include(x => x.SolutionEnvs).Include(x => x.SolutionProjects)
+                .Where(x => x.Id == id).FirstAsync();
+        }
     }
 }

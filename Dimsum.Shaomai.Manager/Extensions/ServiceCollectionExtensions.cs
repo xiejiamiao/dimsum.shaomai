@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Dimsum.Shaomai.Infrastructure;
 using Dimsum.Shaomai.IRepository;
@@ -29,6 +30,7 @@ namespace Dimsum.Shaomai.Manager.Extensions
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IManagerUserRepository, ManagerUserRepository>();
             services.AddScoped<ISolutionRepository, SolutionRepository>();
+            services.AddScoped<ISolutionEnvRepository, SolutionEnvRepository>();
             return services;
         }
 

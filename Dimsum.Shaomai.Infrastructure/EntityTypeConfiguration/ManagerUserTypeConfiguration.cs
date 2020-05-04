@@ -15,6 +15,8 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.ToTable("manager_user");
             builder.HasIndex(x => new {x.UserName, x.IsDeleted}).IsUnique();
             builder.HasQueryFilter(x => !x.IsDeleted);
+            
+
         }
     }
 }

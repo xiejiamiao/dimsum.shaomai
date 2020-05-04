@@ -63,7 +63,8 @@ namespace Dimsum.Shaomai.Manager.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(Guid id)
         {
-            return View();
+            var solution = await _mediator.Send(new SolutionDetailQuery() {Id = id});
+            return View(solution);
         }
     }
 }
