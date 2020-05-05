@@ -290,3 +290,5 @@ F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\ob
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Dimsum.Shaomai.Manager.pdb
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Project\Add.cshtml.g.cs
 F:\Jiamiao.x\personal.project\Jiamiao_x.Dimsum.Shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Env\Add.cshtml.g.cs
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Env\Add.cshtml.g.cs
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Project\Add.cshtml.g.cs
