@@ -8,8 +8,10 @@ namespace Dimsum.Shaomai.DomainEntity
     {
         public Guid Id { get; }
         public DateTime CreatedOn { get; set; }
+        public DateTime LastUpdatedOn { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime? DeletedOn { get; set; }
+        public byte[] RowVersion { get; set; }
 
         /// <summary>
         /// 解决方案英文名(作为命名空间一部分)

@@ -25,21 +25,25 @@
                 <h4 class="card-title">环境变量列表</h4>
                 <table class="table table-hover">
                     <thead>
-                    <tr>
-                        <th>环境变量名</th>
-                        <th>项目数量</th>
-                    </tr>
+                        <tr>
+                            <th>环境变量名</th>
+                            <th>项目数量</th>
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model.SolutionEnvs)
                         {
                             <tr data-env="@item.Id" class="tr-env">
                                 <td>@item.EnvName</td>
-                                <td>@Model.SolutionProjects.Count(x=>x.SolutionEnvId==item.Id)</td>
+                                <td>@Model.SolutionProjects.Count(x => x.SolutionEnvId == item.Id)</td>
                             </tr>
                         }
                     </tbody>
                 </table>
+                <button id="btnGoAddEnv" type="button" class="btn btn-block btn-outline-primary btn-icon-text mt-2">
+                    <i class="mdi mdi-application btn-icon-prepend"></i>
+                    添加环境变量
+                </button>
             </div>
         </div>
     </div>
@@ -47,17 +51,87 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">项目列表</h4>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>项目命</th>
+                        <th>Webhook</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.SolutionProjects)
+                    {
+                        <tr data-project="@item.Id">
+                            <td>@($"{item.CName}({item.Name})")</td>
+                            <td>
+                                @if (item.IsEnableWebHook)
+                                {
+                                    <i class="mdi mdi-check"></i>
+                                }
+                                else
+                                {
+                                    <i class="mdi mdi-window-close"></i>
+                                }
 
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                <button id="btnGoAddProject" type="button" class="btn btn-block btn-outline-primary btn-icon-text mt-2">
+                    <i class="mdi mdi-application btn-icon-prepend"></i>
+                    添加项目
+                </button>
             </div>
         </div>
+</div>
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="/solution/process/@(ViewBag.SolutionId)">解决方案操作记录</a>
+                </h4>
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>等级</th>
+                        <th>内容</th>
+                        <th>时间</th>
+                    </tr>
+                    </thead>
+                    <tbody class="process-tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
     </div>
 </div>
 
-@section scripts
+    @section scripts
 {
-    <script>
-        $(function() {
+        <script>
+        $(function () {
+            var solutionId = '@ViewBag.SolutionId';
+            axios.get('/solution/process/' + solutionId).then(function(response) {
+                var data = response.data;
+                if (data.length > 0) {
+                    var html = "";
+                    for (var i = 0; i < data.length; i++) {
+                        html += "<tr>";
+                        html += "<td>" + data[i].level + "</td>";
+                        html += "<td>" + data[i].content + "</td>";
+                        html += "<td>"+data[i].processedOn+"</td>";
+                        html += "</tr>";
+                    }
+                    $('.process-tbody').html(html);
+                }
+            });
 
+            $('#btnGoAddProject').on('click',
+                function() {
+                    location.href = "/project/add/" + solutionId;
+                });
         })
-    </script>
-}
+        </script>
+    }

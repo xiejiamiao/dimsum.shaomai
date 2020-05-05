@@ -17,6 +17,9 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.HasQueryFilter(x => !x.IsDeleted);
             builder.HasOne(x => x.ManagerUser).WithMany(x => x.Solutions).HasForeignKey(x => x.ManagerUserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.RowVersion).IsRowVersion();
+            builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
+            builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
         }
     }
 }

@@ -21,5 +21,6 @@ namespace Dimsum.Shaomai.IRepository
         /// <param name="managerUserId"></param>
         /// <returns></returns>
         Task<List<Solution>> GetSolutionByOwner(Guid managerUserId);
+
     }
 }

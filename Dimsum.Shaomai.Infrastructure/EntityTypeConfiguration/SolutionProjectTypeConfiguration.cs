@@ -17,6 +17,9 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.HasIndex(x => new {x.Name, x.SolutionId, x.IsDeleted}).IsUnique();
             builder.HasOne(x => x.Solution).WithMany(x => x.SolutionProjects).HasForeignKey(x => x.SolutionId);
             builder.HasOne(x => x.SolutionEnv).WithMany(x => x.SolutionProjects).HasForeignKey(x => x.SolutionEnvId);
+            builder.Property(x => x.RowVersion).IsRowVersion();
+            builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
+            builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
         }
     }
 }

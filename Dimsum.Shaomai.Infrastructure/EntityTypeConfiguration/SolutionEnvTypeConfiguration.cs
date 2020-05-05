@@ -16,6 +16,11 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.ToTable("solution_env");
             builder.HasQueryFilter(x => !x.IsDeleted);
             builder.HasIndex(x => new {x.SolutionId, x.EnvName}).IsUnique();
+            builder.Property(x => x.RowVersion).IsRowVersion();
+            builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
+            builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
+            builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
+            builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
         }
     }
 }

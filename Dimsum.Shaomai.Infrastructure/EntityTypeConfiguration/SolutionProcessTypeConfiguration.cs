@@ -17,6 +17,9 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.HasOne(x => x.Solution).WithMany(x => x.SolutionProcesses).HasForeignKey(x => x.SolutionId).OnDelete(DeleteBehavior.Restrict);
             builder.Property(x => x.Level).HasConversion(v => v.ToString(),
                 v => (SolutionProcessLevel) Enum.Parse(typeof(SolutionProcessLevel), v));
+            builder.Property(x => x.RowVersion).IsRowVersion();
+            builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
+            builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
         }
     }
 }

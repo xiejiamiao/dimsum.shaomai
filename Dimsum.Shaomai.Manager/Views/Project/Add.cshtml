@@ -1,0 +1,95 @@
+﻿@model Dimsum.Shaomai.DomainEntity.Solution
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <i class="mdi mdi-application"></i>
+        </span>
+        添加项目
+    </h3>
+</div>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">项目信息信息</h4>
+            <p class="card-description">
+                解决方案名称：@($"{Model.CName}({Model.Name})")
+            </p>
+            <form>
+                <div class="form-group">
+                    <label for="selectSolutionEnv">环境变量</label>
+                    <select class="form-control" id="selectSolutionEnv">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="txtProjectName">英文名称</label>
+                    <input type="text" class="form-control" id="txtProjectName" placeholder="请输入项目名称">
+                </div>
+                <div class="form-group">
+                    <label for="txtProjectCnName">中文名称</label>
+                    <input type="text" class="form-control" id="txtProjectCnName" placeholder="请输入项目中文名称">
+                </div>
+                <div class="form-group">
+                    <label for="txtProjectAppId">AppId</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@(Model.Name + "_")</span>
+                        </div>
+                        <input type="text" class="form-control" id="txtProjectAppId" placeholder="请输入项目唯一标识" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-gradient-primary mr-2" id="btnSummit">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            axios.get('/solution/env/@Model.Id').then(function(response) {
+                var data = response.data;
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<option value='"+data[i].id+"'>"+data[i].envName+"</option>";
+                }
+                $('#selectSolutionEnv').html(html);
+            });
+
+            $('#btnSummit').on('click',
+                function() {
+                    var solutionId = '@Model.Id';
+                    var projectName = $('#txtProjectName').val();
+                    var projectCName = $('#txtProjectCnName').val();
+                    var projectAppId = $('#txtProjectAppId').val();
+                    var envId = $('#selectSolutionEnv').val();
+                    var obj = {
+                        solutionId: solutionId,
+                        envId: envId,
+                        name: projectName,
+                        cName: projectCName,
+                        appId: projectAppId
+                    };
+                    axios.post('/project/addHandle', obj).then(function(response) {
+                        var data = response.data;
+                        if (data.isSuccess) {
+                            location.href = "/solution/detail/" + solutionId;
+                        } else {
+                            toastr.error(data.msg);
+                        }
+                    })
+                });
+        })
+    </script>
+}

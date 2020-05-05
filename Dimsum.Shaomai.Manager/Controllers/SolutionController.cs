@@ -63,8 +63,21 @@ namespace Dimsum.Shaomai.Manager.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(Guid id)
         {
+            ViewBag.SolutionId = id;
             var solution = await _mediator.Send(new SolutionDetailQuery() {Id = id});
             return View(solution);
+        }
+
+        [HttpGet]
+        public async Task<List<ProcessListItem>> Process(Guid id)
+        {
+            return await _mediator.Send(new ProcessQuery() {SolutionId = id, PageIndex = 1, PageSize = 10});
+        }
+
+        [HttpGet]
+        public async Task<List<EnvListItem>> Env(Guid id)
+        {
+            return await _mediator.Send(new EnvQuery() {SolutionId = id});
         }
     }
 }

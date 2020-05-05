@@ -17,6 +17,11 @@ namespace Dimsum.Shaomai.DomainEntity
         DateTime CreatedOn { get; set; }
 
         /// <summary>
+        /// 最后更新时间
+        /// </summary>
+        DateTime LastUpdatedOn { get; set; }
+
+        /// <summary>
         /// 是否已经删除
         /// </summary>
         bool IsDeleted { get; set; }
@@ -25,5 +30,10 @@ namespace Dimsum.Shaomai.DomainEntity
         /// 删除时间
         /// </summary>
         DateTime? DeletedOn { get; set; }
+
+        /// <summary>
+        /// 并发标记
+        /// </summary>
+        byte[] RowVersion { get; set; }
     }
 }
