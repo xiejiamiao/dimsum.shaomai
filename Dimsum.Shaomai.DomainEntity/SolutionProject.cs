@@ -57,5 +57,11 @@ namespace Dimsum.Shaomai.DomainEntity
         /// webhook地址
         /// </summary>
         public string WebHookUrl { get; set; }
+
+        /// <summary>
+        /// 【导航属性】配置项集合
+        /// </summary>
+        public List<SolutionProjectProperty> SolutionProjectProperties { get; set; }
+
     }
 }

@@ -23,6 +23,8 @@ namespace Dimsum.Shaomai.Infrastructure
 
         public DbSet<SolutionProcess> SolutionProcesses { get; set; }
 
+        public DbSet<SolutionProjectProperty> SolutionProjectProperties { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DomainContext).Assembly);
