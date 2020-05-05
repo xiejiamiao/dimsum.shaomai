@@ -36,7 +36,7 @@ namespace Dimsum.Shaomai.Manager.Application.EventHandlers
             var processEntity = new SolutionProcess()
             {
                 SolutionId = projectInfo.SolutionId,
-                Level = SolutionProcessLevel.Property,
+                Level = SolutionProcessLevel.Project,
                 Content = $"创建项目【{projectInfo.Name}({projectInfo.CName})】",
                 CreatedOn = DateTime.Now
             };

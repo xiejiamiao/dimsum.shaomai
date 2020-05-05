@@ -24,5 +24,11 @@ namespace Dimsum.Shaomai.Repository
             return await _domainContext.SolutionEnvs.Where(x => x.SolutionId == solutionId)
                 .OrderByDescending(x => x.CreatedOn).ToListAsync();
         }
+
+        public async Task<bool> ExistEnvName(Guid solutionId, string envName)
+        {
+            return await _domainContext.SolutionEnvs.AnyAsync(x =>
+                x.SolutionId == solutionId && x.EnvName.Equals(envName, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

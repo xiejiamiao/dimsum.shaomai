@@ -6,7 +6,14 @@
 
 @section style
 {
-
+    <style>
+        #tbodyProject tr{
+            cursor: pointer;
+        }
+        .indent-2 {
+            text-indent: 2em;
+        }
+    </style>
 }
 
 <div class="page-header">
@@ -19,7 +26,20 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 grid-margin stretch-card">
+    <div class="col-md-3 grid-margin stretch-card">
+        <div class="card bg-gradient-danger card-img-holder text-white">
+            <div class="card-body">
+                <h4 class="font-weight-bold mb-3">解决方案信息</h4>
+                <h5 class="mr-2 mb-1">中文名</h5>
+                <p class="indent-2 mb-3 font-weight-light">@Model.CName</p>
+                <h5 class="mr-2 mb-1">英文名</h5>
+                <p class="indent-2 mb-3 font-weight-light">@Model.Name</p>
+                <h5 class="mr-2 mb-1">联系邮箱</h5>
+                <p class="indent-2 mb-3 font-weight-light">@Model.ContactEmail</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">环境变量列表</h4>
@@ -53,29 +73,31 @@
                 <h4 class="card-title">项目列表</h4>
                 <table class="table table-hover">
                     <thead>
-                    <tr>
-                        <th>项目命</th>
-                        <th>Webhook</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var item in Model.SolutionProjects)
-                    {
-                        <tr data-project="@item.Id">
-                            <td>@($"{item.CName}({item.Name})")</td>
-                            <td>
-                                @if (item.IsEnableWebHook)
-                                {
-                                    <i class="mdi mdi-check"></i>
-                                }
-                                else
-                                {
-                                    <i class="mdi mdi-window-close"></i>
-                                }
-
-                            </td>
+                        <tr>
+                            <th>项目命</th>
+                            <th>ENV</th>
+                            <th>Webhook</th>
                         </tr>
-                    }
+                    </thead>
+                    <tbody id="tbodyProject">
+                        @foreach (var item in Model.SolutionProjects)
+                        {
+                            <tr data-project="@item.Id">
+                                <td>@($"{item.CName}({item.Name})")</td>
+                                <td>@item.SolutionEnv.EnvName</td>
+                                <td>
+                                    @if (item.IsEnableWebHook)
+                                    {
+                                        <i class="mdi mdi-check"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="mdi mdi-window-close"></i>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
                 <button id="btnGoAddProject" type="button" class="btn btn-block btn-outline-primary btn-icon-text mt-2">
@@ -84,7 +106,7 @@
                 </button>
             </div>
         </div>
-</div>
+    </div>
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -93,24 +115,24 @@
                 </h4>
                 <table class="table table-striped table-responsive-md">
                     <thead>
-                    <tr>
-                        <th>等级</th>
-                        <th>内容</th>
-                        <th>时间</th>
-                    </tr>
+                        <tr>
+                            <th>等级</th>
+                            <th>内容</th>
+                            <th>时间</th>
+                        </tr>
                     </thead>
                     <tbody class="process-tbody">
                     </tbody>
                 </table>
             </div>
         </div>
-        
+
     </div>
 </div>
 
-    @section scripts
+@section scripts
 {
-        <script>
+    <script>
         $(function () {
             var solutionId = '@ViewBag.SolutionId';
             axios.get('/solution/process/' + solutionId).then(function(response) {
@@ -132,6 +154,17 @@
                 function() {
                     location.href = "/project/add/" + solutionId;
                 });
+
+            $('#btnGoAddEnv').on('click',
+                function() {
+                    location.href = "/env/add/" + solutionId;
+                });
+            $('#tbodyProject tr').on('click',
+                function() {
+                    var that = $(this);
+                    var projectId = that.data('project');
+                    toastr.info(projectId);
+                });
         })
-        </script>
-    }
+    </script>
+}

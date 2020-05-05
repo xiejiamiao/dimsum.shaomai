@@ -14,5 +14,13 @@ namespace Dimsum.Shaomai.IRepository
         /// <param name="solutionId"></param>
         /// <returns></returns>
         Task<List<SolutionEnv>> GetBySolutionId(Guid solutionId);
+
+        /// <summary>
+        /// 判断环境变量名是否存在
+        /// </summary>
+        /// <param name="solutionId"></param>
+        /// <param name="envName"></param>
+        /// <returns></returns>
+        Task<bool> ExistEnvName(Guid solutionId, string envName);
     }
 }

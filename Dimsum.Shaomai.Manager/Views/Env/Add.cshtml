@@ -1,0 +1,56 @@
+﻿@model Dimsum.Shaomai.DomainEntity.Solution
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <i class="mdi mdi-application"></i>
+        </span>
+        添加环境变量
+    </h3>
+</div>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">项目信息信息</h4>
+            <p class="card-description">
+                解决方案名称：@($"{Model.CName}({Model.Name})")
+            </p>
+            <form>
+                <div class="form-group">
+                    <label for="txtEnvName">环境变量名</label>
+                    <input type="text" class="form-control" id="txtEnvName" placeholder="请输入环境变量名">
+                </div>
+                <button type="button" class="btn btn-gradient-primary mr-2" id="btnSummit">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(function() {
+            $('#btnSummit').on('click',
+                function () {
+                    var envName = $('#txtEnvName').val();
+                    var solutionId = '@Model.Id';
+                    var obj = {
+                        solutionId: solutionId,
+                        envName: envName
+                    };
+                    axios.post('/env/addHandle', obj).then(function(response) {
+                        var data = response.data;
+                        if (data.isSuccess) {
+                            location.href = "/solution/detail/" + solutionId;
+                        } else {
+                            toastr.error(data.msg);
+                        }
+                    });
+                });
+        })
+    </script>
+}

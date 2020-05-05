@@ -27,6 +27,9 @@ namespace Dimsum.Shaomai.Manager.Application.CommandHandlers.Project
 
         public async Task<BaseDto> Handle(AddProjectCommand request, CancellationToken cancellationToken)
         {
+            if (await _solutionProjectRepository.ExistProjectName(request.SolutionId, request.EnvId, request.Name)) return new BaseDto() {IsSuccess = false, Msg = "项目名已存在"};
+            if (await _solutionProjectRepository.ExistAppId(request.SolutionId, request.EnvId, request.AppId)) return new BaseDto() {IsSuccess = false, Msg = "AppId已存在"};
+
             var projectEntity = new SolutionProject()
             {
                 SolutionId = request.SolutionId,
