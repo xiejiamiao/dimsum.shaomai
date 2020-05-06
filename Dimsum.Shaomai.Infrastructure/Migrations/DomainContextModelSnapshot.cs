@@ -254,6 +254,60 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                     b.ToTable("solution_project");
                 });
 
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.SolutionProjectProperty", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsObsolete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Key")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("ParentId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.Property<Guid>("SolutionProjectId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SolutionProjectId");
+
+                    b.ToTable("solution_project_property");
+                });
+
             modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.Solution", b =>
                 {
                     b.HasOne("Dimsum.Shaomai.DomainEntity.ManagerUser", "ManagerUser")
@@ -293,6 +347,15 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                         .WithMany("SolutionProjects")
                         .HasForeignKey("SolutionId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.SolutionProjectProperty", b =>
+                {
+                    b.HasOne("Dimsum.Shaomai.DomainEntity.SolutionProject", "SolutionProject")
+                        .WithMany("SolutionProjectProperties")
+                        .HasForeignKey("SolutionProjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

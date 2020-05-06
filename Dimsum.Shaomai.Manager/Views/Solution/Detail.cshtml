@@ -126,7 +126,6 @@
                 </table>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -163,7 +162,7 @@
                 function() {
                     var that = $(this);
                     var projectId = that.data('project');
-                    toastr.info(projectId);
+                    location.href = "/project/detail/" + projectId;
                 });
         })
     </script>

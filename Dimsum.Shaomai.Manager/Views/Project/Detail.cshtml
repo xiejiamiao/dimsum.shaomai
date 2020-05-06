@@ -1,0 +1,222 @@
+﻿@model Dimsum.Shaomai.DomainEntity.SolutionProject
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section style
+{
+    <style>
+        .property-tbody tr {
+            cursor: pointer;
+        }
+    </style>
+}
+
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <i class="mdi mdi-application"></i>
+        </span>
+        项目详情
+    </h3>
+</div>
+
+<div class="row">
+    <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4>项目信息</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">添加配置项</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="selectPropertyType">类型</label>
+                        <select class="form-control" id="selectPropertyType">
+                            <option value="keyValue">Key-Value</option>
+                            <option value="group">Group</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectParent">父级节点</label>
+                        <select class="form-control" id="selectParent">
+                            <option value="">顶级</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtKey">键</label>
+                        <input type="text" class="form-control" id="txtKey" placeholder="请输入键">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtKey">值</label>
+                        <input type="text" class="form-control" id="txtValue" placeholder="请输入值">
+                    </div>
+                    <button type="button" class="btn btn-gradient-primary mr-2 btn-block" id="btnAdd">添加</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    配置项详情
+                </h4>
+                <table class="table table-responsive-md table-hover">
+                    <thead>
+                    <tr>
+                        <th>类型</th>
+                        <th>键</th>
+                        <th>值</th>
+                        <th>状态</th>
+                        <th>创建时间</th>
+                        <th>最后编辑时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="property-tbody">
+                    <tr><td colspan="7"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+    @section scripts
+    {
+        <script>
+            function setObsolete(propertyId) {
+                toastr.info(propertyId);
+            }
+
+            function showChild(e, propertyId, type) {
+                if (type === 'Group') {
+                    axios.get('/project/property?projectId=@(Model.Id)&parent=' + propertyId).then(function(response) {
+                        var data = response.data;
+                        if (data.length <= 0) return;
+                        var html = "<tr><td colspan='7'><table class='table table-bordered'>";
+                        html += "<thead><tr>";
+                        html += "<th>类型</th>";
+                        html += "<th>键</th>";
+                        html += "<th>值</th>";
+                        html += "<th>状态</th>";
+                        html += "<th>创建时间</th>";
+                        html += "<th>最后编辑时间</th>";
+                        html += "<th>操作</th>";
+                        html += "</tr></thead>";
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<tr onclick=\"showChild(this,'" + data[i].id + "','" + data[i].type + "')\">";
+                            if (data[i].type === "KeyValue") {
+                                html += "<td><label class='badge badge-info'>键值对</label></td>";
+                            } else {
+                                html += "<td><label class='badge badge-primary'>配置组</label></td>";
+                            }
+                            html += "<td>" + data[i].key + "</td>";
+                            html += "<td>" + data[i].value + "</td>";
+                            if (data[i].isObsolete) {
+                                html += "<td><label class='badge badge-danger'>过期</label></td>";
+                            } else {
+                                html += "<td><label class='badge badge-success'>正常</label></td>";
+                            }
+                            
+                            html += "<td>" + data[i].createdOn + "</td>";
+                            html += "<td>" + data[i].lastUpdatedOn + "</td>";
+                            html +=
+                                "<td><button class='btn btn-gradient-primary btn-fw mr-2'>修改</button><button class='btn btn-gradient-danger btn-fw' onclick=\"setObsolete('" +
+                                data[i].id +
+                                "')\">设置为过期</button></td>";
+                            html += "</tr>";
+                        }
+                        html += "</table></td></tr>";
+                        $(e).after(html);
+                        console.log(data);
+                    });
+                }
+            }
+
+            $(function() {
+                var projectId = '@Model.Id';
+
+                function loadTopProperty() {
+                    axios.get('/project/property?projectId=' + projectId).then(function(response) {
+                        var data = response.data;
+                        var html = "";
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<tr onclick=\"showChild(this,'" + data[i].id + "','" + data[i].type + "')\">";
+                            if (data[i].type === "KeyValue") {
+                                html += "<td><label class='badge badge-info'>键值对</label></td>";
+                            } else {
+                                html += "<td><label class='badge badge-primary'>配置组</label></td>";
+                            }
+                            html += "<td>" + data[i].key + "</td>";
+                            html += "<td>" + data[i].value + "</td>";
+                            if (data[i].isObsolete) {
+                                html += "<td><label class='badge badge-danger'>过期</label></td>";
+                            } else {
+                                html += "<td><label class='badge badge-success'>正常</label></td>";
+                            }
+                            html += "<td>" + data[i].createdOn + "</td>";
+                            html += "<td>" + data[i].lastUpdatedOn + "</td>";
+                            html +=
+                                "<td><button class='btn btn-gradient-primary btn-fw mr-2'>修改</button><button class='btn btn-gradient-danger btn-fw' onclick=\"setObsolete('" +
+                                data[i].id +
+                                "')\">设置为过期</button></td>";
+                            html += "</tr>";
+                        }
+                        $('.property-tbody').html(html);
+                    });
+                }
+
+                function loadGroup() {
+                    axios.get('/project/group?projectId=' + projectId).then(function(response) {
+                        var data = response.data;
+                        console.log(data);
+                        if (data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                $('#selectParent')
+                                    .append('<option value=' + data[i].id + '>' + data[i].key + '</option>');
+                            }
+                        }
+
+                    });
+                }
+
+                loadTopProperty();
+                loadGroup();
+
+                $('#btnAdd').on('click',
+                    function() {
+                        var type = $('#selectPropertyType').val();
+                        var parent = $('#selectParent').val();
+                        var key = $('#txtKey').val();
+                        var value = $('#txtValue').val();
+                        var obj = {
+                            projectId: projectId,
+                            type: type,
+                            parent: parent,
+                            key: key,
+                            value: value
+                        };
+                        axios.post('/project/addPropertyHandler', obj).then(function(response) {
+                            var data = response.data;
+                            if (data.isSuccess) {
+                                loadTopProperty();
+                                //loadGroup();
+                                toastr.success("添加成功");
+                            } else {
+                                toastr.error(data.msg);
+                            }
+                        });
+                    });
+            });
+        </script>
+    }

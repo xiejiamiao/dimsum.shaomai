@@ -32,5 +32,6 @@ namespace Dimsum.Shaomai.Repository
                 x.SolutionId == solutionId && x.AppId.Equals(appId, StringComparison.OrdinalIgnoreCase) &&
                 x.SolutionEnvId == envId);
         }
+
     }
 }
