@@ -18,5 +18,7 @@ namespace Dimsum.Shaomai.Manager.Application.Commands.Project
         public string Key { get; set; }
 
         public string Value { get; set; }
+
+        public string Desc { get; set; }
     }
 }

@@ -23,5 +23,7 @@ namespace Dimsum.Shaomai.ManagerDto.Project
         public string LastUpdatedOn { get; set; }
 
         public string BackgroundColor { get; set; }
+
+        public string Description { get; set; }
     }
 }

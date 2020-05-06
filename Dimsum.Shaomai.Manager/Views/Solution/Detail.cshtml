@@ -28,14 +28,17 @@
 <div class="row">
     <div class="col-md-3 grid-margin stretch-card">
         <div class="card bg-gradient-danger card-img-holder text-white">
-            <div class="card-body">
+            <div class="card-body" style="padding: 2.5rem 1.5rem;">
                 <h4 class="font-weight-bold mb-3">解决方案信息</h4>
-                <h5 class="mr-2 mb-1">中文名</h5>
-                <p class="indent-2 mb-3 font-weight-light">@Model.CName</p>
-                <h5 class="mr-2 mb-1">英文名</h5>
-                <p class="indent-2 mb-3 font-weight-light">@Model.Name</p>
-                <h5 class="mr-2 mb-1">联系邮箱</h5>
-                <p class="indent-2 mb-3 font-weight-light">@Model.ContactEmail</p>
+                <h5 class="mr-2 mb-1">
+                    <label class="badge badge-info">中文名</label> @Model.CName
+                </h5>
+                <h5 class="mr-2 mb-1">
+                    <label class="badge badge-info">英文名</label> @Model.Name
+                </h5>
+                <h5 class="mr-2 mb-1">
+                    <label class="badge badge-info">联系邮箱</label> @Model.ContactEmail
+                </h5>
             </div>
         </div>
     </div>

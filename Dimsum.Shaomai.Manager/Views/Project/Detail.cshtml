@@ -56,6 +56,10 @@
                         <label for="txtKey">值</label>
                         <input type="text" class="form-control" id="txtValue" placeholder="请输入值">
                     </div>
+                    <div class="form-group">
+                        <label for="txtDescription">说明</label>
+                        <input type="text" class="form-control" id="txtDescription" placeholder="请输入配置项说明">
+                    </div>
                     <button type="button" class="btn btn-gradient-primary mr-2 btn-block" id="btnAdd">添加</button>
                 </form>
             </div>
@@ -94,12 +98,29 @@
                 <h4 class="card-title">
                     配置项详情
                 </h4>
+                <form class="form-inline">
+                    <div class="form-check form-check-flat form-check-primary">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            过滤掉过时配置
+                            <i class="input-helper"></i>
+                        </label>
+                    </div>
+                    <div class="form-check mx-sm-2 form-check-primary">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            过滤掉未发布配置
+                            <i class="input-helper"></i>
+                        </label>
+                    </div>
+                </form>
                 <table class="table table-responsive-sm table-hover ">
                     <thead>
                     <tr>
                         <th>类型</th>
                         <th>键</th>
                         <th>值</th>
+                        <th>说明</th>
                         <th>状态</th>
                         <th>创建时间</th>
                         <th>最后编辑时间</th>
@@ -229,6 +250,7 @@
                             }
                             html += "<td>" + data[i].key + "</td>";
                             html += "<td>" + data[i].value + "</td>";
+                            html += "<td>" + data[i].description + "</td>";
                             if (data[i].isObsolete) {
                                 html += "<td><label class='badge badge-danger'>过期</label></td>";
                             } else {
@@ -257,12 +279,14 @@
                         var parent = $('#selectParent').val();
                         var key = $('#txtKey').val();
                         var value = $('#txtValue').val();
+                        var desc = $('#txtDescription').val();
                         var obj = {
                             projectId: projectId,
                             type: type,
                             parent: parent,
                             key: key,
-                            value: value
+                            value: value,
+                            desc: desc
                         };
                         axios.post('/project/addPropertyHandler', obj).then(function(response) {
                             var data = response.data;

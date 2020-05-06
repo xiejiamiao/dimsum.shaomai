@@ -39,7 +39,8 @@ namespace Dimsum.Shaomai.Manager.Application.QueryHandlers.Project
                         IsObsolete = item.IsObsolete,
                         CreatedOn = item.CreatedOn.ToString("yyyy-MM-dd HH:mm:ss"),
                         LastUpdatedOn = item.LastUpdatedOn.ToString("yyyy-MM-dd HH:mm:ss"),
-                        BackgroundColor = ConstValue.SafeColor[item.Level % ConstValue.SafeColor.Count]
+                        BackgroundColor = ConstValue.SafeColor[item.Level % ConstValue.SafeColor.Count],
+                        Description = item.Description
                     });
                     if (item.Type == PropertyType.Group)
                     {
@@ -70,7 +71,8 @@ namespace Dimsum.Shaomai.Manager.Application.QueryHandlers.Project
                         IsObsolete = item.IsObsolete,
                         CreatedOn = item.CreatedOn.ToString("yyyy-MM-dd HH:mm:ss"),
                         LastUpdatedOn = item.LastUpdatedOn.ToString("yyyy-MM-dd HH:mm:ss"),
-                        BackgroundColor = ConstValue.SafeColor[item.Level % ConstValue.SafeColor.Count]
+                        BackgroundColor = ConstValue.SafeColor[item.Level % ConstValue.SafeColor.Count],
+                        Description = item.Description
                     });
                     if (item.Type == PropertyType.Group)
                     {

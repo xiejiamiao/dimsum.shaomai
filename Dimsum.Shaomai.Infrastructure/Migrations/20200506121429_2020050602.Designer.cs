@@ -3,14 +3,16 @@ using System;
 using Dimsum.Shaomai.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dimsum.Shaomai.Infrastructure.Migrations
 {
     [DbContext(typeof(DomainContext))]
-    partial class DomainContextModelSnapshot : ModelSnapshot
+    [Migration("20200506121429_2020050602")]
+    partial class _2020050602
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,9 +210,6 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                     b.Property<string>("CName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("CommonCacheLife")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)");
@@ -279,9 +278,6 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                     b.Property<bool>("IsObsolete")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool>("IsPublish")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<string>("Key")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -308,9 +304,6 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Value")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("ValueBeforePublish")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");

@@ -49,14 +49,24 @@ namespace Dimsum.Shaomai.DomainEntity
         public string Key { get; set; }
         
         /// <summary>
-        /// 配置项的值
+        /// 配置项的值(已发布)
         /// </summary>
         public string Value { get; set; }
 
         /// <summary>
         /// 配置项说明
         /// </summary>
-        //public string Description { get; set; }
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 是否已经发布
+        /// </summary>
+        public bool IsPublish { get; set; }
+
+        /// <summary>
+        /// 未发布的值
+        /// </summary>
+        public string ValueBeforePublish { get; set; }
     }
 
     public enum PropertyType

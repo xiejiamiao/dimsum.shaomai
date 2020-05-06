@@ -59,6 +59,11 @@ namespace Dimsum.Shaomai.DomainEntity
         public string WebHookUrl { get; set; }
 
         /// <summary>
+        /// 公共缓存生命周期(秒)
+        /// </summary>
+        public int CommonCacheLife { get; set; }
+
+        /// <summary>
         /// 【导航属性】配置项集合
         /// </summary>
         public List<SolutionProjectProperty> SolutionProjectProperties { get; set; }

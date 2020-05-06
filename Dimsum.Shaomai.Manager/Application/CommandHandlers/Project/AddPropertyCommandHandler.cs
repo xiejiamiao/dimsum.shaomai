@@ -50,7 +50,8 @@ namespace Dimsum.Shaomai.Manager.Application.CommandHandlers.Project
                     : PropertyType.Group,
                 IsObsolete = false,
                 Key = request.Key,
-                Value = request.Value
+                Value = request.Value,
+                Description = request.Desc
             }; 
             await _solutionProjectPropertyRepository.AddAsync(dbEntity, cancellationToken);
             var changedRow = await _unitOfWork.SaveChangesAsync(cancellationToken);
