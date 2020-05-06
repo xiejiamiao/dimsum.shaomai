@@ -70,6 +70,32 @@
                 </h4>
                 <table class="table table-responsive-md table-hover">
                     <thead>
+                        <tr>
+                            <th>类型</th>
+                            <th>键</th>
+                            <th>值</th>
+                            <th>状态</th>
+                            <th>创建时间</th>
+                            <th>最后编辑时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="property-tbody">
+                        <tr><td colspan="7"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    配置项详情
+                </h4>
+                <table class="table table-responsive-sm table-hover ">
+                    <thead>
                     <tr>
                         <th>类型</th>
                         <th>键</th>
@@ -80,14 +106,12 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody class="property-tbody">
-                    <tr><td colspan="7"></td></tr>
+                    <tbody class="all-property-tbody">
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    
 </div>
 
 
@@ -190,8 +214,42 @@
                     });
                 }
 
+                function loadAllProperty() {
+                    axios.get('/project/allProperty?projectId=' + projectId).then(function(response) {
+                        var data = response.data;
+                        
+                        var tbody = $('.all-property-tbody');
+                        for (var i = 0; i < data.length; i++) {
+                            var html = "";
+                            html += "<tr style='background-color:" + data[i].backgroundColor + "'>";
+                            if (data[i].type === "KeyValue") {
+                                html += "<td><label class='badge badge-info'>键值对</label></td>";
+                            } else {
+                                html += "<td><label class='badge badge-primary'>配置组</label></td>";
+                            }
+                            html += "<td>" + data[i].key + "</td>";
+                            html += "<td>" + data[i].value + "</td>";
+                            if (data[i].isObsolete) {
+                                html += "<td><label class='badge badge-danger'>过期</label></td>";
+                            } else {
+                                html += "<td><label class='badge badge-success'>正常</label></td>";
+                            }
+                            html += "<td>" + data[i].createdOn + "</td>";
+                            html += "<td>" + data[i].lastUpdatedOn + "</td>";
+                            html +=
+                                "<td><button class='btn btn-gradient-primary mr-2 btn-sm'>修改</button><button class='btn btn-gradient-danger btn-sm' onclick=\"setObsolete('" +
+                                data[i].id +
+                                "')\">设置为过期</button></td>";
+                            html += "</tr>";
+                            tbody.append(html);
+                        }
+                        console.log(data);
+                    });
+                }
+
                 loadTopProperty();
                 loadGroup();
+                loadAllProperty();
 
                 $('#btnAdd').on('click',
                     function() {
@@ -217,6 +275,8 @@
                             }
                         });
                     });
+
+                
             });
         </script>
     }

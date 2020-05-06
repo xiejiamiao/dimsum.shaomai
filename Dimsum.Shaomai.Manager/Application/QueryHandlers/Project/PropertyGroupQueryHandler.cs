@@ -32,7 +32,7 @@ namespace Dimsum.Shaomai.Manager.Application.QueryHandlers.Project
                     result.Add(new GroupPropertyListItem()
                     {
                         Id = item.Id.ToString(),
-                        Key = item.Key.PadLeft(item.Level,'-')
+                        Key = item.Key
                     });
                     result = await GetGroupByParent(projectId, item.Id, result);
                 }
@@ -46,10 +46,10 @@ namespace Dimsum.Shaomai.Manager.Application.QueryHandlers.Project
                 {
                     foreach (var item in group)
                     {
-                        var preKey = "╏";
+                        var preKey="";
                         for (int i = 0; i < item.Level; i++)
                         {
-                            preKey += "➡";
+                            preKey += "&nbsp;&nbsp;&nbsp;&nbsp;";
                         }
                         result.Add(new GroupPropertyListItem()
                         {

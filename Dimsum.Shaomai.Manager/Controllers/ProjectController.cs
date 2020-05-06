@@ -60,6 +60,13 @@ namespace Dimsum.Shaomai.Manager.Controllers
         }
 
         [HttpGet]
+        public async Task<List<PropertyListItem>> AllProperty(string projectId)
+        {
+            var cmdResponse = await _mediator.Send(new AllPropertyQuery() {ProjectId = Guid.Parse(projectId)});
+            return cmdResponse;
+        }
+
+        [HttpGet]
         public async Task<List<GroupPropertyListItem>> Group(string projectId)
         {
             var cmdResponse = await _mediator.Send(new PropertyGroupQuery() {ProjectId = Guid.Parse(projectId)});
