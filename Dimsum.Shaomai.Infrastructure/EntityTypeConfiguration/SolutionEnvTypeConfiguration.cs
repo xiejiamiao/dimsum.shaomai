@@ -20,7 +20,6 @@ namespace Dimsum.Shaomai.Infrastructure.EntityTypeConfiguration
             builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
             builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
             builder.Property(x => x.CreatedOn).ValueGeneratedOnAdd();
-            builder.Property(x => x.LastUpdatedOn).ValueGeneratedOnAddOrUpdate();
         }
     }
 }

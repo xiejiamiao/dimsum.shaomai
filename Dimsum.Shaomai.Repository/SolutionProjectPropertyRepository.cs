@@ -69,5 +69,24 @@ namespace Dimsum.Shaomai.Repository
             }
             
         }
+
+        public async Task<List<SolutionProjectProperty>> GetPropertyRecursion(Guid propertyId, List<SolutionProjectProperty> result)
+        {
+            var dbEntity = await _domainContext.SolutionProjectProperties.FindAsync(propertyId);
+            if (result.All(x => x.Id != dbEntity.Id))
+            {
+                result.Add(dbEntity);
+            }
+            var childProperties = await GetByParentId(dbEntity.Id);
+            if (childProperties != null && childProperties.Count > 0)
+            {
+                foreach (var childItem in childProperties)
+                {
+                    result = await GetPropertyRecursion(childItem.Id, result);
+                }
+            }
+
+            return result;
+        }
     }
 }

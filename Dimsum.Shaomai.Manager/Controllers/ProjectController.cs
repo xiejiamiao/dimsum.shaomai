@@ -72,5 +72,12 @@ namespace Dimsum.Shaomai.Manager.Controllers
             var cmdResponse = await _mediator.Send(new PropertyGroupQuery() {ProjectId = Guid.Parse(projectId)});
             return cmdResponse;
         }
+
+        [HttpPost]
+        public async Task<BaseDto> SetObsolete([FromBody]SetObsoleteCommand cmd)
+        {
+            var cmdResponse = await _mediator.Send(cmd);
+            return cmdResponse;
+        }
     }
 }

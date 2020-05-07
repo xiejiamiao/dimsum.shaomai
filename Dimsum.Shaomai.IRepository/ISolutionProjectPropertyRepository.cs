@@ -38,5 +38,14 @@ namespace Dimsum.Shaomai.IRepository
         /// <param name="parentId"></param>
         /// <returns></returns>
         Task<List<SolutionProjectProperty>> GetGroupByParentId(Guid projectId,Guid? parentId);
+
+        /// <summary>
+        /// 根据节点查询出所有子节点(包括自身)
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="propertyId"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        Task<List<SolutionProjectProperty>> GetPropertyRecursion(Guid propertyId, List<SolutionProjectProperty> result);
     }
 }

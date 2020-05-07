@@ -14,25 +14,36 @@ namespace Dimsum.Shaomai.Manager.Application.CommandHandlers.Project
     public class SetObsoleteCommandHandler:IRequestHandler<SetObsoleteCommand,BaseDto>
     {
         private readonly ISolutionProjectPropertyRepository _solutionProjectPropertyRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public SetObsoleteCommandHandler(ISolutionProjectPropertyRepository solutionProjectPropertyRepository)
+        public SetObsoleteCommandHandler(ISolutionProjectPropertyRepository solutionProjectPropertyRepository,IUnitOfWork unitOfWork)
         {
             _solutionProjectPropertyRepository = solutionProjectPropertyRepository;
+            _unitOfWork = unitOfWork;
         }
+
 
 
         public async Task<BaseDto> Handle(SetObsoleteCommand request, CancellationToken cancellationToken)
         {
-            var dbEntity = await _solutionProjectPropertyRepository.GetAsync(request.PropertyId);
-            dbEntity.IsObsolete = true;
-            await _solutionProjectPropertyRepository.UpdateAsync(dbEntity);
+            var result = new List<SolutionProjectProperty>();
+            result = await _solutionProjectPropertyRepository.GetPropertyRecursion(request.PropertyId, result);
 
-            if (dbEntity.Type == PropertyType.Group)
+            foreach (var item in result)
             {
-
+                item.IsObsolete = true;
+                await _solutionProjectPropertyRepository.UpdateAsync(item);
             }
 
-            throw new NotImplementedException();
+            var changedRow = await _unitOfWork.SaveChangesAsync();
+            if (changedRow > 0)
+            {
+                return new BaseDto(){IsSuccess = true,Msg = "操作成功"};
+            }
+            else
+            {
+                return new BaseDto(){IsSuccess = false,Msg = "操作失败"};
+            }
         }
     }
 }
