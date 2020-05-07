@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "Dimsum.Shaomai.HttpReportDashboard": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7001;http://localhost:7000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
