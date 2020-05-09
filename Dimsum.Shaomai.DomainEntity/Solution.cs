@@ -53,5 +53,10 @@ namespace Dimsum.Shaomai.DomainEntity
         /// </summary>
         public List<SolutionProcess> SolutionProcesses { get; set; } = new List<SolutionProcess>();
 
+        /// <summary>
+        /// 【导航属性】授权Key集合
+        /// </summary>
+        public List<SolutionRsa> SolutionRsas { get; set; }
+
     }
 }

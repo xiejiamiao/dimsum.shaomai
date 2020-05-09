@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using NETCore.Encrypt;
+// ReSharper disable InconsistentNaming
+// ReSharper disable UnusedMember.Global
+
 // ReSharper disable StringLiteralTypo
 
 namespace Dimsum.Shaomai.Util
@@ -42,6 +46,22 @@ namespace Dimsum.Shaomai.Util
                 result.Append(SourceWithoutCharacter[random.Next(0, SourceWithoutCharacter.Length)]);
             }
             return result.ToString();
+        }
+
+        public static (string PublicKey,string privateKey) RSAInfoByPKCS8()
+        {
+            var pkcs8KeyTuple = EncryptProvider.RSAToPem(true);
+            return (pkcs8KeyTuple.publicPem, pkcs8KeyTuple.privatePem);
+        }
+
+        public static string EncryptRSA(string publicKey, string srcString)
+        {
+            return  EncryptProvider.RSAEncryptWithPem(publicKey, srcString);
+        }
+
+        public static string DecryptRSA(string privateKey, string srcString)
+        {
+            return EncryptProvider.RSADecryptWithPem(privateKey, srcString);
         }
     }
 }

@@ -25,6 +25,10 @@ namespace Dimsum.Shaomai.Infrastructure
 
         public DbSet<SolutionProjectProperty> SolutionProjectProperties { get; set; }
 
+        public DbSet<SolutionRsa> SolutionRsas { get; set; }
+
+        public DbSet<SolutionRsaProject> SolutionRsaProjects { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DomainContext).Assembly);

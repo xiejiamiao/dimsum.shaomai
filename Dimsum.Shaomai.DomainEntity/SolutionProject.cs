@@ -68,5 +68,11 @@ namespace Dimsum.Shaomai.DomainEntity
         /// </summary>
         public List<SolutionProjectProperty> SolutionProjectProperties { get; set; }
 
+        /// <summary>
+        /// 【导航属性】授权Key与项目映射关系
+        /// </summary>
+        public List<SolutionRsaProject> SolutionRsaProjects { get; set; }
+
+
     }
 }

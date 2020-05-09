@@ -33,7 +33,10 @@ namespace Dimsum.Shaomai.Repository
 
         public override async Task<Solution> GetAsync(Guid id)
         {
-            return await _domainContext.Solutions.Include(x => x.SolutionEnvs).Include(x => x.SolutionProjects).ThenInclude(x=>x.SolutionEnv)
+            return await _domainContext.Solutions.Include(x => x.SolutionEnvs)
+                .Include(x=>x.SolutionRsas)
+                .Include(x => x.SolutionProjects)
+                .ThenInclude(x=>x.SolutionEnv)
                 .Where(x => x.Id == id).FirstAsync();
         }
     }

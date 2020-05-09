@@ -320,6 +320,94 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                     b.ToTable("solution_project_property");
                 });
 
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.SolutionRsa", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("PrivateKey")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("PublicKey")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.Property<string>("RsaType")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<Guid>("SolutionId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SolutionId");
+
+                    b.ToTable("solution_rsa");
+                });
+
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.SolutionRsaProject", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp(6)");
+
+                    b.Property<Guid>("SolutionProjectId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("SolutionRsaId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SolutionProjectId");
+
+                    b.HasIndex("SolutionRsaId");
+
+                    b.ToTable("solution_rsa_project");
+                });
+
             modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.Solution", b =>
                 {
                     b.HasOne("Dimsum.Shaomai.DomainEntity.ManagerUser", "ManagerUser")
@@ -367,6 +455,30 @@ namespace Dimsum.Shaomai.Infrastructure.Migrations
                     b.HasOne("Dimsum.Shaomai.DomainEntity.SolutionProject", "SolutionProject")
                         .WithMany("SolutionProjectProperties")
                         .HasForeignKey("SolutionProjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.SolutionRsa", b =>
+                {
+                    b.HasOne("Dimsum.Shaomai.DomainEntity.Solution", "Solution")
+                        .WithMany("SolutionRsas")
+                        .HasForeignKey("SolutionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Dimsum.Shaomai.DomainEntity.SolutionRsaProject", b =>
+                {
+                    b.HasOne("Dimsum.Shaomai.DomainEntity.SolutionProject", "SolutionProject")
+                        .WithMany("SolutionRsaProjects")
+                        .HasForeignKey("SolutionProjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Dimsum.Shaomai.DomainEntity.SolutionRsa", "SolutionRsa")
+                        .WithMany("SolutionRsaProjects")
+                        .HasForeignKey("SolutionRsaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
