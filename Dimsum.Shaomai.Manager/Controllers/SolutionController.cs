@@ -79,5 +79,11 @@ namespace Dimsum.Shaomai.Manager.Controllers
         {
             return await _mediator.Send(new EnvQuery() {SolutionId = id});
         }
+
+        [HttpGet]
+        public async Task<List<ProjectListItem>> Project(Guid id)
+        {
+            return await _mediator.Send(new ProjectQuery() {SolutionId = id});
+        }
     }
 }

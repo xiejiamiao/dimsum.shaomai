@@ -441,3 +441,4 @@ F:\Jiamiao.x\personal.project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\ne
 F:\Jiamiao.x\personal.project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\staticwebassets\Dimsum.Shaomai.Manager.StaticWebAssets.xml
 F:\Jiamiao.x\personal.project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Project\Detail.cshtml.g.cs
 G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Project\Detail.cshtml.g.cs
+G:\repo\Jiamiao.x.Project\dimsum.shaomai\Dimsum.Shaomai.Manager\obj\Debug\netcoreapp3.1\Razor\Views\Rsa\Add.cshtml.g.cs

@@ -34,6 +34,7 @@ namespace Dimsum.Shaomai.Manager.Extensions
             services.AddScoped<ISolutionProcessRepository, SolutionProcessRepository>();
             services.AddScoped<ISolutionProjectRepository, SolutionProjectRepository>();
             services.AddScoped<ISolutionProjectPropertyRepository, SolutionProjectPropertyRepository>();
+            services.AddScoped<ISolutionRsaRepository, SolutionRsaRepository>();
             return services;
         }
 

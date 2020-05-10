@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <i class="mdi mdi-database-plus"></i>
+        </span>
+        添加接口授权Key
+    </h3>
+</div>
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label>名称</label>
+                        <input id="txtName" class="form-control" type="text" name="name" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label>类型</label>
+                        <div class="col-sm-2">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="rsaType" value="all" checked="">
+                                    全解决方案
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="rsaType" value="some">
+                                    指定项目
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div-project">
+                            <label>指定项目</label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="checkboxProject">
+                                    Default
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                    Default
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                    Default
+                                    <i class="input-helper"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPublicKey">公钥</label>
+                            <textarea class="form-control" id="txtPublicKey" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPrivateKey">密钥</label>
+                            <textarea class="form-control" id="txtPrivateKey" rows="4"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <button id="btn-new-rsa" class="btn btn-gradient-info">生成公钥密钥</button>
+                <button id="btn-save" class="btn btn-gradient-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        var solutionId = '@ViewBag.SolutionId';
+        $(function () {
+
+            $('#div-project').hide();
+
+            var rsaType = 'all';
+
+            $('input:radio[name="rsaType"]').click(function() {
+                var that = $(this);
+                if (that.val() === "some") {
+                    axios.get('/solution/project/' + solutionId).then(function(response) {
+                        var data = response.data;
+                        var html = "<label>指定项目</label>";
+                        for (var i = 0; i < data.length; i++) {
+                            html += " <div class='form-check'>";
+                            html += "<label class='form-check-label'>";
+                            html += " <input type='checkbox' class='form-check-input' value='" + data[i].id + "' name='checkboxProject'>";
+                            html += data[i].name + "(" + data[i].cName + ")";
+                            html += " <i class='input-helper'></i>";
+                            html += "</label>";
+                            html += "</div>";
+                        }
+                        $('#div-project').html(html);
+                        $('#div-project').show();
+                        rsaType = 'some';
+                    });
+                } else {
+                    $('#div-project').html();
+                    $('#div-project').hide();
+                    rsaType = "all";
+                }
+            });
+
+            $('#btn-new-rsa').on('click',
+                function () {
+                    axios.get('/rsa/newRsa').then(function(response) {
+                        var data = response.data
+                        $('#txtPublicKey').val(data.publicKey);
+                        $('#txtPrivateKey').val(data.privateKey);
+                    });
+                });
+
+            $('#btn-save').on('click',
+                function () {
+                    var projectIds = [];
+                    var name = $('#txtName').val();
+                    var publicKey = $('#txtPublicKey').val();
+                    var privateKey = $('#txtPrivateKey').val();
+
+                    if (rsaType === 'some') {
+                        var projects = $('input[name="checkboxProject"]:checked');
+                        if (projects.length === 0) {
+                            toastr.error('指定项目的授权Key你倒是指定项目呀');
+                            return;
+                        }
+                        projects.each((index, item) => {
+                            projectIds.push($(item).val());
+                        });
+                    }
+                    var obj = {
+                        solutionId: solutionId,
+                        name: name,
+                        rsaType: rsaType,
+                        projectIds: projectIds,
+                        publicKey: publicKey,
+                        privateKey: privateKey
+                    };
+                    axios.post('/rsa/addHandle', obj).then(function(response) {
+                        var data = response.data;
+                        if (data.isSuccess) {
+                            location.href = "/solution/detail/" + solutionId;
+                        } else {
+                            toastr.error(data.msg);
+                        }
+                    })
+                });
+        })
+    </script>
+}

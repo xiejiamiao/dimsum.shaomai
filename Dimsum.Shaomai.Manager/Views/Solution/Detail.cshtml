@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <button class="btn btn-sm btn-block btn-gradient-primary">添加授权key</button>
+                            <button id="btnGoAddRsaKey" class="btn btn-sm btn-block btn-gradient-primary">添加授权key</button>
                         </td>
                     </tr>
                     </tbody>
@@ -147,7 +147,9 @@
                             <tr>
                                 <td>@item.Title</td>
                                 <td>@item.RsaType</td>
-                                <td></td>
+                                <td>
+                                    <button type="button" class="btn btn-gradient-danger btn-fw">删除</button>
+                                </td>
                             </tr>
                         }
                         </tbody>
@@ -214,6 +216,10 @@
                     var that = $(this);
                     var projectId = that.data('project');
                     location.href = "/project/detail/" + projectId;
+                });
+            $('#btnGoAddRsaKey').on('click',
+                function() {
+                    location.href = "/rsa/add/" + solutionId;
                 });
         })
     </script>

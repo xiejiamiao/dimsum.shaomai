@@ -11,5 +11,7 @@ namespace Dimsum.Shaomai.IRepository
         Task<bool> ExistProjectName(Guid solutionId, Guid envId, string name);
 
         Task<bool> ExistAppId(Guid solutionId, Guid envId, string appId);
+
+        Task<List<SolutionProject>> GetProjectBySolutionId(Guid solutionId);
     }
 }

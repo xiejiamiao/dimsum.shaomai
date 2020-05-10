@@ -33,5 +33,10 @@ namespace Dimsum.Shaomai.Repository
                 x.SolutionEnvId == envId);
         }
 
+        public async Task<List<SolutionProject>> GetProjectBySolutionId(Guid solutionId)
+        {
+            return await _domainContext.SolutionProjects.Where(x => x.SolutionId == solutionId)
+                .OrderBy(x => x.CreatedOn).ToListAsync();
+        }
     }
 }
